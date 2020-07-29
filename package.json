@@ -1,0 +1,21 @@
+{
+  "name": "server_fn",
+  "version": "1.0.0",
+  "description": "TypeScript 封装了一些Node服务器中常用的方法，异步变同步，部分地方用到async，await",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "TypeScript",
+    "Node",
+    "express",
+    "bcrypt"
+  ],
+  "author": "Shijie Qiu",
+  "license": "ISC"
+}
