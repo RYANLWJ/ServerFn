@@ -66,7 +66,7 @@ function readFile(path) {
 }
 exports.readFile = readFile;
 /**
- * 修改文件
+ * 写文件
  * @param path filePath
  * @param data data
  * @param options Options
@@ -222,6 +222,11 @@ function encryption(data, saltOrRounds) {
     });
 }
 exports.encryption = encryption;
+/**
+ * 判断为加密和加密数据是否相等
+ * @param data 为加密的数据
+ * @param encrypted 加密的数据
+ */
 function Untie(data, encrypted) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {

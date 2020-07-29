@@ -17,7 +17,7 @@ export async function readFile(path: string): Promise<any> {
   });
 }
 /**
- * 修改文件
+ * 写文件
  * @param path filePath
  * @param data data
  * @param options Options
@@ -141,6 +141,11 @@ export async function encryption(
 ): Promise<string> {
   return await hash(data, saltOrRounds);
 }
+/**
+ * 判断为加密和加密数据是否相等
+ * @param data 为加密的数据
+ * @param encrypted 加密的数据
+ */
 export async function Untie(data: any, encrypted: string): Promise<Boolean> {
   return await compare(data, encrypted);
 }
