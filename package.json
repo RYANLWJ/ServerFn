@@ -1,8 +1,8 @@
 {
   "name": "server_fn",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "TypeScript 封装了一些Node服务器中常用的方法，异步变同步，部分地方用到async，await",
-  "main": "./dist/index.js",
+  "main": "./dist/ServerFn.js",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "crypto": "^1.0.1",
