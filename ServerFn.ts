@@ -8,8 +8,8 @@ import Jwt from "jsonwebtoken";
  * @param path filePath
  * @param options options:object
  */
-export async function readFile(path: string): Promise<any> {
-  return await new Promise((resolve, reject) => {
+export function readFile(path: string): Promise<any> {
+  return new Promise((resolve, reject) => {
     fs.readFile(join(__dirname, path), "utf8", (err, data) => {
       err && reject(err);
       resolve(data);
@@ -22,11 +22,11 @@ export async function readFile(path: string): Promise<any> {
  * @param data data
  * @param options Options
  */
-export async function writeFile(
+export function writeFile(
   path: string,
   data: string | NodeJS.ArrayBufferView
 ): Promise<any> {
-  return await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fs.writeFile(path, data, (err) => {
       err && reject(err);
       resolve(true);
@@ -38,11 +38,11 @@ export async function writeFile(
  * @param oldName  修改前的名字
  * @param newName  修改后的名字
  */
-export async function rename(
+export function rename(
   oldName: fs.PathLike,
   newName: fs.PathLike
 ): Promise<any> {
-  return await new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fs.rename(oldName, newName, (err) => {
       err && reject(err);
       resolve(true);
@@ -54,8 +54,8 @@ export async function rename(
  * @param path filePath
  * @param options options
  */
-export async function isFile(path: string): Promise<any> {
-  return await new Promise((resolve, reject) => {
+export function isFile(path: string): Promise<any> {
+  return new Promise((resolve, reject) => {
     fs.stat(join(__dirname, path), (err, data) => {
       err && reject(err);
       data.isFile() && resolve("File");
@@ -67,8 +67,8 @@ export async function isFile(path: string): Promise<any> {
  * 读取文件夹
  * @param path filePath
  */
-export async function readDir(path: string): Promise<any> {
-  return await new Promise((resolve, reject) => {
+export function readDir(path: string): Promise<any> {
+  return new Promise((resolve, reject) => {
     fs.readdir(
       join(__dirname, path),
       "utf8",
@@ -83,8 +83,8 @@ export async function readDir(path: string): Promise<any> {
  * 删除文件
  * @param path filePath
  */
-export async function Unlink(path: string): Promise<any> {
-  return await new Promise((resolve, reject) => {
+export function Unlink(path: string): Promise<any> {
+  return new Promise((resolve, reject) => {
     fs.unlink(join(__dirname, path), (err) => {
       err && reject(err);
       resolve(true);
