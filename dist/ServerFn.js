@@ -41,7 +41,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Untie = exports.encryption = exports.Puzzle = exports.CreateToken = exports.Cors = exports.Unlink = exports.readDir = exports.isFile = exports.rename = exports.writeFile = exports.readFile = void 0;
 var fs_1 = __importDefault(require("fs"));
-var path_1 = require("path");
 var bcrypt_1 = require("bcrypt");
 var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 /**
@@ -51,7 +50,7 @@ var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
  */
 function readFile(path) {
     return new Promise(function (resolve, reject) {
-        fs_1.default.readFile(path_1.join(__dirname, path), "utf8", function (err, data) {
+        fs_1.default.readFile(path, "utf8", function (err, data) {
             err && reject(err);
             resolve(data);
         });
@@ -94,7 +93,7 @@ exports.rename = rename;
  */
 function isFile(path) {
     return new Promise(function (resolve, reject) {
-        fs_1.default.stat(path_1.join(__dirname, path), function (err, data) {
+        fs_1.default.stat(path, function (err, data) {
             err && reject(err);
             data.isFile() && resolve("File");
             data.isDirectory() && resolve("Dir");
@@ -108,7 +107,7 @@ exports.isFile = isFile;
  */
 function readDir(path) {
     return new Promise(function (resolve, reject) {
-        fs_1.default.readdir(path_1.join(__dirname, path), "utf8", function (err, files) {
+        fs_1.default.readdir(path, "utf8", function (err, files) {
             err && reject(err);
             files && resolve(files);
         });
@@ -121,7 +120,7 @@ exports.readDir = readDir;
  */
 function Unlink(path) {
     return new Promise(function (resolve, reject) {
-        fs_1.default.unlink(path_1.join(__dirname, path), function (err) {
+        fs_1.default.unlink(path, function (err) {
             err && reject(err);
             resolve(true);
         });

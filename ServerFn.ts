@@ -10,7 +10,7 @@ import Jwt from "jsonwebtoken";
  */
 export function readFile(path: string): Promise<any> {
   return new Promise((resolve, reject) => {
-    fs.readFile(join(__dirname, path), "utf8", (err, data) => {
+    fs.readFile(path, "utf8", (err, data) => {
       err && reject(err);
       resolve(data);
     });
@@ -56,7 +56,7 @@ export function rename(
  */
 export function isFile(path: string): Promise<any> {
   return new Promise((resolve, reject) => {
-    fs.stat(join(__dirname, path), (err, data) => {
+    fs.stat(path, (err, data) => {
       err && reject(err);
       data.isFile() && resolve("File");
       data.isDirectory() && resolve("Dir");
@@ -70,7 +70,7 @@ export function isFile(path: string): Promise<any> {
 export function readDir(path: string): Promise<any> {
   return new Promise((resolve, reject) => {
     fs.readdir(
-      join(__dirname, path),
+      path,
       "utf8",
       (err: NodeJS.ErrnoException | null, files: string[]) => {
         err && reject(err);
@@ -85,7 +85,7 @@ export function readDir(path: string): Promise<any> {
  */
 export function Unlink(path: string): Promise<any> {
   return new Promise((resolve, reject) => {
-    fs.unlink(join(__dirname, path), (err) => {
+    fs.unlink(path, (err) => {
       err && reject(err);
       resolve(true);
     });
