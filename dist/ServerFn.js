@@ -50,17 +50,10 @@ var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
  * @param options options:object
  */
 function readFile(path) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.readFile(path_1.join(__dirname, path), "utf8", function (err, data) {
-                            err && reject(err);
-                            resolve(data);
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.readFile(path_1.join(__dirname, path), "utf8", function (err, data) {
+            err && reject(err);
+            resolve(data);
         });
     });
 }
@@ -72,17 +65,10 @@ exports.readFile = readFile;
  * @param options Options
  */
 function writeFile(path, data) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.writeFile(path, data, function (err) {
-                            err && reject(err);
-                            resolve(true);
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.writeFile(path, data, function (err) {
+            err && reject(err);
+            resolve(true);
         });
     });
 }
@@ -93,17 +79,10 @@ exports.writeFile = writeFile;
  * @param newName  修改后的名字
  */
 function rename(oldName, newName) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.rename(oldName, newName, function (err) {
-                            err && reject(err);
-                            resolve(true);
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.rename(oldName, newName, function (err) {
+            err && reject(err);
+            resolve(true);
         });
     });
 }
@@ -114,18 +93,11 @@ exports.rename = rename;
  * @param options options
  */
 function isFile(path) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.stat(path_1.join(__dirname, path), function (err, data) {
-                            err && reject(err);
-                            data.isFile() && resolve("File");
-                            data.isDirectory() && resolve("Dir");
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.stat(path_1.join(__dirname, path), function (err, data) {
+            err && reject(err);
+            data.isFile() && resolve("File");
+            data.isDirectory() && resolve("Dir");
         });
     });
 }
@@ -135,17 +107,10 @@ exports.isFile = isFile;
  * @param path filePath
  */
 function readDir(path) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.readdir(path_1.join(__dirname, path), "utf8", function (err, files) {
-                            err && reject(err);
-                            files && resolve(files);
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.readdir(path_1.join(__dirname, path), "utf8", function (err, files) {
+            err && reject(err);
+            files && resolve(files);
         });
     });
 }
@@ -155,17 +120,10 @@ exports.readDir = readDir;
  * @param path filePath
  */
 function Unlink(path) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, new Promise(function (resolve, reject) {
-                        fs_1.default.unlink(path_1.join(__dirname, path), function (err) {
-                            err && reject(err);
-                            resolve(true);
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    return new Promise(function (resolve, reject) {
+        fs_1.default.unlink(path_1.join(__dirname, path), function (err) {
+            err && reject(err);
+            resolve(true);
         });
     });
 }
