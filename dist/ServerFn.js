@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Untie = exports.encryption = exports.Puzzle = exports.CreateToken = exports.Cors = exports.Unlink = exports.readDir = exports.isFile = exports.rename = exports.writeFile = exports.readFile = void 0;
+exports.Untie = exports.encryption = exports.Puzzle = exports.CreateToken = exports.Cors = exports.Unlink = exports.readDir = exports.isFile = exports.rename = exports.readFile = void 0;
 var fs_1 = __importDefault(require("fs"));
 var bcrypt_1 = require("bcrypt");
 var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -57,21 +57,6 @@ function readFile(path) {
     });
 }
 exports.readFile = readFile;
-/**
- * 写文件
- * @param path filePath
- * @param data data
- * @param options Options
- */
-function writeFile(path, data) {
-    return new Promise(function (resolve, reject) {
-        fs_1.default.writeFile(path, data, function (err) {
-            err && reject(err);
-            resolve(true);
-        });
-    });
-}
-exports.writeFile = writeFile;
 /**
  * 用于命名
  * @param oldName  修改前的名字

@@ -1,6 +1,6 @@
 import fs from "fs";
 import { Application } from "express";
-import { join } from "path";
+import { WriteFileOptions } from "fs";
 import { hash, compare } from "bcrypt";
 import Jwt from "jsonwebtoken";
 /**
@@ -16,23 +16,7 @@ export function readFile(path: string): Promise<any> {
     });
   });
 }
-/**
- * 写文件
- * @param path filePath
- * @param data data
- * @param options Options
- */
-export function writeFile(
-  path: string,
-  data: string | NodeJS.ArrayBufferView
-): Promise<any> {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(path, data, (err) => {
-      err && reject(err);
-      resolve(true);
-    });
-  });
-}
+
 /**
  * 用于命名
  * @param oldName  修改前的名字
